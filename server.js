@@ -1,11 +1,12 @@
 const express = require("express"); //create server
 const app = express(); //set up server
 
-//app.set("view engine", "ejs"); //view engine
-//app.use(logger);
-
 app.use(express.static("public"));
-app.use(logger);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.set("view engine", "ejs"); //view engine
+//app.use(logger);
 
 // app.get("/", (req, res) => {
 //   console.log("Here"); //run code to access url
@@ -19,9 +20,10 @@ const userRouter = require("./routes/users");
 
 app.use("/users", userRouter);
 
-function logger(req, res, next) {
-  console.log(req.originalUrl);
-  next();
-}
+// //middle wear function.
+// function logger(req, res, next) {
+//   console.log(req.originalUrl);
+//   next();
+// }
 
 app.listen(3000); //server run
