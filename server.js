@@ -5,6 +5,7 @@ const app = express(); //set up server
 //app.use(logger);
 
 app.use(express.static("public"));
+app.use(logger);
 
 // app.get("/", (req, res) => {
 //   console.log("Here"); //run code to access url
