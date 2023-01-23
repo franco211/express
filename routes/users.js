@@ -16,11 +16,13 @@ router.post("/", (req, res) => {
 router
   .route("/:id")
   .get((req, res) => {
-    console.log(req.user);
-    res.send(`Get User with ID ${req.params.id}`);
+    // console.log(req.user);
+    // res.send(`Get User with ID ${req.params.id}`);
+    res.render("users/new", { firstName: "Test" });
   })
   .put((req, res) => {
-    res.send(`Update User with ID ${req.params.id}`);
+    // res.send(`Update User with ID ${req.params.id}`);
+    res.send("Create User");
   })
   .delete((req, res) => {
     res.send(`Delete User with ID ${req.params.id}`);
