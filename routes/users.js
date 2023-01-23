@@ -14,7 +14,9 @@ router.get("/new", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  res.send("Create User");
+  //   res.send("Create User");
+  console.log(req.body.firstName);
+  res.send("hi");
 });
 
 router
