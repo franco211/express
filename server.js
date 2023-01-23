@@ -1,6 +1,8 @@
 const express = require("express"); //create server
 const app = express(); //set up server
 
+app.set("view engine", "ejs"); //view engine
+
 app.get("/", (req, res) => {
   console.log("Here"); //run code to access url
   res.sendStatus(500).json({ Message: "Error" }); //status with a message
