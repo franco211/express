@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.render("index", { text: "World" }); //rendering a file
 });
 
-const userRouter = require("/routes/users");
+const userRouter = require("./routes/users");
 
 app.use("/users", userRouter);
 
